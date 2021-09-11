@@ -1,0 +1,36 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  test:
+    name: Test on Node.js ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        node_version: ['14']
+        os: [windows-latest, macos-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node_version }}
+
+      - name: npm install
+        run: npm ci
+
+      - name: svelte kit build
+        run: npm run build
+
+      - name: svelte check
+        run: npm run check
+
+      - name: lint
+        run: npm run lint
+
+      - name: test
+        run: npm run test
