@@ -1,0 +1,4 @@
+node_modules
+.idea
+.vercel_build_output
+.svelte-kit
