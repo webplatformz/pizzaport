@@ -3,23 +3,22 @@
     import {browser} from '$app/env';
 
     export const prerender = true;
-    export function load(): LoadOutput<{ preRenderedRandomNumber: number }> {
+    export function load(): LoadOutput<{ randomNumber: number }> {
         console.log(`Static - Rendered on ${browser ? 'user-agent' : 'server'}`);
         return {
             props: {
-                preRenderedRandomNumber: Math.random(),
+                randomNumber: Math.random(),
             },
-            maxage: 60
         };
     }
 </script>
 
 <script lang="ts">
-    export let preRenderedRandomNumber: number;
+    export let randomNumber: number;
 </script>
 
 <svelte:head>
     <title>Static page</title>
 </svelte:head>
 
-<h1>Pre-Rendered page with static random number: {preRenderedRandomNumber}</h1>
+<h1>Static page with random number: {randomNumber}</h1>
