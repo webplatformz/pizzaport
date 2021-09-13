@@ -4,4 +4,4 @@
 </script>
 
 <p>Hello {name}</p>
-<ItaloScore scorePercent="66"/>
+<ItaloScore scorePercent="30"/>

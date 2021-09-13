@@ -11,8 +11,8 @@
 </script>
 
 <div>
-    <p>{myscore.title}</p>
     <img src={myscore.iconUrl} alt="How italian are you">
+    <p>{myscore.title}</p>
     <p>
         <progress value={scorePercent/100}></progress> {scorePercent}%
     </p>
@@ -20,7 +20,7 @@
 
 <style>
     p {
-        color: darkgreen;
+        color: var(--color-green);
     }
 
     img {
