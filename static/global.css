@@ -1,0 +1,25 @@
+:root {
+    --color-primary: #be2500;
+    --color-green: #1b9300;
+    --color-yellow: #fcca05;
+    --color-gray: #d9d9d9;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-page-background: #f0f0f0;
+    --border-width: 5px;
+    --font-family-heading: 'Baloo 2', sans-serif;
+    --font-weight-heading: 600;
+    --font-family-text: Roboto, sans-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    background-color: var(--color-page-background);
+}
