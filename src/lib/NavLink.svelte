@@ -4,7 +4,7 @@
     $: active = $page.path === path || (path !== '/' && $page.path.startsWith(path));
 </script>
 
-<a href="{path}" class:active><slot/></a>
+<a href={path} class:active><slot/></a>
 
 <style>
     a {

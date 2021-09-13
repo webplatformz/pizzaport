@@ -23,6 +23,7 @@
         height: 85px;
         display: flex;
         border-bottom: var(--border-width) solid var(--color-primary);
+        background-color: var(--color-white);
     }
 
     img {
