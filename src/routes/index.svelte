@@ -1,7 +1,11 @@
 <script lang="ts">
-	export let name = 'PizzaPort';
+    import SizeSlider from "../lib/SizeSlider.svelte";
     import ItaloScore from '../lib/ItaloScore.svelte';
+    export let name = 'Pizza';
+
+    let pizzaSize;
 </script>
 
 <p>Hello {name}</p>
+<SizeSlider min={28} max={40} bind:value={pizzaSize}/>
 <ItaloScore scorePercent="50"/>

@@ -1,37 +1,28 @@
 import type {ServerRequest} from '@sveltejs/kit/types/hooks';
 import type {EndpointOutput} from '@sveltejs/kit/types/endpoint';
+import {PIZZAS} from '$lib/pizzas';
 
-const KNOWN_PIZZA_NAMES = ['BACON', 'DIAVOLA', 'FUNGHI', 'GAMBERONI', 'HAWAII', 'MARGHERITA', 'SALAMI', 'VEGETARIANA', 'VERDE'];
-
-export async function get({ params }: ServerRequest): Promise<EndpointOutput<{name: string, imgSrc?: string}>> {
-    const { name } = params;
+export async function get({params}: ServerRequest): Promise<EndpointOutput<{ name: string, imgSrc?: string }>> {
+    const {name} = params;
 
     await sleep(2000); // random latency
 
-    const matchingPizzaName = KNOWN_PIZZA_NAMES.find(n => name.toUpperCase() === n);
+    const matchingPizza = PIZZAS.find(n => name === n.pathSegment);
 
-   if(matchingPizzaName) {
-       return {
-           body: {
-               name: matchingPizzaName[0].toUpperCase() + matchingPizzaName.substring(1).toLowerCase(),
-               imgSrc: `/pizzas/pizza-${matchingPizzaName.toLowerCase()}.png`
-           }
-       };
-   }
-
-   if(name.toUpperCase() === 'MILLENIAL') {
-       return {
-           status: 410, // this pizza is no longer served
-           body: {
-               name: name[0].toUpperCase() + name.substring(1).toLowerCase()
-           }
-       };
-   }
+    if (matchingPizza) {
+        return {
+            status: matchingPizza.endOfLife ? 410 : 200,
+            body: {
+                name: matchingPizza.name,
+                imgSrc: matchingPizza.imgSrc
+            },
+        };
+    }
 
     return {
         status: 404,
         body: {
-            name: name[0].toUpperCase() + name.substring(1).toLowerCase()
+            name: name
         }
     };
 }
@@ -41,5 +32,5 @@ async function sleep(duration: number) {
         setTimeout(() => {
             resolve(true);
         }, duration);
-    })
+    });
 }
