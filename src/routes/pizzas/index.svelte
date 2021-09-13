@@ -35,7 +35,7 @@
 <ul>
     {#each items as {name, url}}
         <li>
-            <NavLink path={url}>{name}</NavLink>
+            <NavLink path={url} prefetch>{name}</NavLink>
         </li>
     {/each}
 </ul>
