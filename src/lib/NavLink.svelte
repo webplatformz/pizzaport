@@ -1,6 +1,6 @@
 <script lang="ts">
     import {page} from '$app/stores';
-    export let path;
+    export let path = '';
     $: active = $page.path === path || (path !== '/' && $page.path.startsWith(path));
 </script>
 
