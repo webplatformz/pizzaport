@@ -1,8 +1,8 @@
 <script lang="ts">
     let italoRange = [
         {score_min_percent: 90, title: 'Super Mario', iconUrl: 'mario.png'},
-        {score_min_percent: 80, title: 'Luigi', iconUrl: 'mario.png'},
-        {score_min_percent: 0, title: 'Bowser', iconUrl: 'mario.png'},
+        {score_min_percent: 80, title: 'Luigi', iconUrl: 'luigi.png'},
+        {score_min_percent: 0, title: 'Bowser', iconUrl: 'bowser.png'},
     ];
 
     export let scorePercent: number = 0;
