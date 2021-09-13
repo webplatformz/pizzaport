@@ -13,8 +13,8 @@ export async function get({ params }: ServerRequest): Promise<EndpointOutput<{na
    if(matchingPizzaName) {
        return {
            body: {
-               name: matchingPizzaName[0].toUpperCase() + matchingPizzaName.substring(1),
-               imgSrc: `/pizzas/pizza-${matchingPizzaName}.png`
+               name: matchingPizzaName[0].toUpperCase() + matchingPizzaName.substring(1).toLowerCase(),
+               imgSrc: `/pizzas/pizza-${matchingPizzaName.toLowerCase()}.png`
            }
        };
    }
