@@ -9,6 +9,7 @@
             props: {
                 preRenderedRandomNumber: Math.random(),
             },
+            maxage: 60
         };
     }
 </script>
