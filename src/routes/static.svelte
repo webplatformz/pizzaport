@@ -4,7 +4,7 @@
 
     export const prerender = true;
     export function load(): LoadOutput<{ preRenderedRandomNumber: number }> {
-        console.log(`Rendered on ${browser ? 'user-agent' : 'server'}`);
+        console.log(`Static - Rendered on ${browser ? 'user-agent' : 'server'}`);
         return {
             props: {
                 preRenderedRandomNumber: Math.random(),
