@@ -1,16 +1,20 @@
 <script lang="ts">
-    import { page } from '$app/stores';
+    import NavLink from "./NavLink.svelte";
+
+    const links = [
+        {path: '/', name: 'Dashboard'},
+        {path: '/pizzas', name: 'Pizzas'}
+    ]
 </script>
 
 <nav>
     <img src="/pizzaport-logo.svg" alt="pizzaport"/>
     <ul>
-        <li>
-            <a href="/" class:active={$page.path === '/'}>Dashboard</a>
-        </li>
-        <li>
-            <a href="/pizzas" class:active={$page.path === '/pizzas'}>Pizzas</a>
-        </li>
+        {#each links as {path, name}}
+            <li>
+                <NavLink {path}>{name}</NavLink>
+            </li>
+        {/each}
     </ul>
 </nav>
 
@@ -32,26 +36,5 @@
         padding: 0;
         flex-grow: 1;
         list-style: none;
-    }
-
-    a {
-        display: flex;
-        align-items: center;
-        padding: 0 20px;
-        height: 100%;
-        text-decoration: none;
-        font-family: var(--font-family-heading);
-        font-weight: var(--font-weight-heading);
-        color: var(--color-black);
-        font-size: 1.5rem;
-    }
-
-    a:hover {
-        color: var(--color-primary);
-    }
-
-    a.active {
-        background-color: var(--color-primary);
-        color: white;
     }
 </style>
