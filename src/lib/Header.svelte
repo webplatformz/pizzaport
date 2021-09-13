@@ -26,8 +26,8 @@
     }
 
     img {
-        max-height: 100%;
         margin: 20px;
+        height: 40px;
     }
 
     ul {
