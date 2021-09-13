@@ -57,5 +57,8 @@
 			"svelte"
 		],
 		"testEnvironment": "jsdom"
+	},
+	"engines": {
+		"node": "~14"
 	}
 }
