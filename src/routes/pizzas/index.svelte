@@ -1,17 +1,13 @@
 <script context="module" lang="ts">
-    import type {LoadInput, LoadOutput} from '@sveltejs/kit';
+    import type {LoadInput, LoadOutput} from "@sveltejs/kit";
 
-    export async function load({fetch}: LoadInput): Promise<LoadOutput<{ items: { name: string, url: string }[] }>> {
-        const url = `/pizzas.json`;
-        const res = await fetch(url);
-        const {pizzas} = await res.json();
-
-        if (res.ok) {
+    export async function load({context}: LoadInput): Promise<LoadOutput<{ items: { name: string, url: string }[] }>> {
+        if (context.pizzas) {
             return {
                 props: {
-                    items: pizzas
+                    items: context.pizzas
                 }
-            };
+            }
         }
 
         return {
@@ -19,12 +15,14 @@
             error: new Error('Internal server error')
         };
     }
+
 </script>
 
 <script lang="ts">
-    import NavLink from '../../lib/NavLink.svelte';
+    import NavLink from '$lib/NavLink.svelte';
+    import type {Link} from "../../global";
 
-    export let items: { name: string, url: string }[];
+    export let items: Link[] = [];
 </script>
 
 <svelte:head>
