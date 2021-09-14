@@ -1,6 +1,5 @@
 <script lang="ts">
-    export let initScore = 0;
-    export let scorePercent: number = initScore;
+    export let scorePercent = 0;
 
     let italoRange = [
         {score_min_percent: 90, title: 'Super Mario', iconUrl: 'mario.png'},
