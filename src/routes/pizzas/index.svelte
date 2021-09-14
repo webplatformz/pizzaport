@@ -33,7 +33,7 @@
 
 <h1>Pizza List</h1>
 <ul>
-    {#each items as {name, url}}
+    {#each items as {name, url} (name)}
         <li>
             <NavLink path={url} prefetch>{name}</NavLink>
         </li>
