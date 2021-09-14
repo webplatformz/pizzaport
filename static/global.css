@@ -23,3 +23,19 @@ html, body {
     font-size: 16px;
     background-color: var(--color-page-background);
 }
+
+#svelte {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1rem 2.5rem;
+}
