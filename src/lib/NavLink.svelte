@@ -1,11 +1,15 @@
 <script lang="ts">
     import {page} from '$app/stores';
+
     export let path = '';
     export let prefetch = false;
-    $: active = $page.path === path || (path !== '/' && $page.path.startsWith(path));
+
+    $: active = $page.path === path || (path !== '/' && $page.path.includes(path));
 </script>
 
-<a sveltekit:prefetch={prefetch || undefined} href={path} class:active><slot/></a>
+<a sveltekit:prefetch={prefetch || undefined} href={path} class:active>
+    <slot/>
+</a>
 
 <style>
     a {
