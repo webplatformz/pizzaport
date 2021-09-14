@@ -3,9 +3,15 @@
     import ItaloScore from '../lib/ItaloScore.svelte';
     export let name = 'Pizza';
 
-    let pizzaSize;
+    const minPizzaSize = 28;
+    const maxPizzaSize = 40;
+    let pizzaSize = 36;
+
+    $: scorePercent = Math.floor((pizzaSize - minPizzaSize) / (maxPizzaSize - minPizzaSize) * 100);
 </script>
 
-<p>Hello {name}</p>
-<SizeSlider min={28} max={40} bind:value={pizzaSize}/>
-<ItaloScore scorePercent={50} />
+<h1>Hello {name}</h1>
+
+<SizeSlider min={minPizzaSize} max={maxPizzaSize} bind:value={pizzaSize}/>
+
+<ItaloScore {scorePercent} />
