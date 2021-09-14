@@ -37,9 +37,3 @@
         <slot/>
     </main>
 </div>
-
-<style>
-    .container {
-        display: flex;
-    }
-</style>
