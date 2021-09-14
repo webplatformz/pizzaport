@@ -8,4 +8,4 @@
 
 <p>Hello {name}</p>
 <SizeSlider min={28} max={40} bind:value={pizzaSize}/>
-<ItaloScore scorePercent="50"/>
+<ItaloScore scorePercent={50} />
