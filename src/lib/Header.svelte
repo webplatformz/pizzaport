@@ -3,6 +3,7 @@
 
     const links = [
         {path: '/', name: 'Dashboard'},
+        {path: '/service', name: 'Service'},
         {path: '/pizzas', name: 'Pizzas'}
     ]
 </script>
