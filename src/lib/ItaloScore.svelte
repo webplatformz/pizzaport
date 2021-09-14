@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
+
     export let scorePercent = 0;
 
     let italoRange = [
@@ -6,6 +8,13 @@
         {score_min_percent: 80, title: 'Luigi', iconUrl: 'luigi.png'},
         {score_min_percent: 0, title: 'Bowser', iconUrl: 'bowser.png'},
     ];
+    let initState = true;
+
+    onMount(async () => {
+        setTimeout(() => {
+            initState = false;
+        }, 100);
+    });
 
     $: myscore = italoRange.find(element => scorePercent >= element.score_min_percent);
 </script>
@@ -77,7 +86,7 @@
         fill: none;
         stroke-width: 2.8;
         stroke-linecap: round;
-        animation: progress 1s ease-out forwards;
+        transition: stroke-dasharray .8s ease;
     }
 
     @keyframes progress {
