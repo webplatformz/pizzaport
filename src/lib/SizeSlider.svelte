@@ -17,13 +17,17 @@
     <hr>
     <div class="stops">
         {#each stops as stop}
-            <div class="stop" class:active={stop === value} use:styles={{size: stop + 'px'}} style="left: {position(stop)}%">
+            <div class="stop"
+                 class:active={stop === value}
+                 use:styles={{size: stop + 'px'}}
+                 style="left: {position(stop)}%"
+                 data-testId="stop">
                 <span>{stop}</span>
             </div>
         {/each}
         <div class="thumb" style="left: {position(value)}%"></div>
     </div>
-    <input type="range" {min} {max} {step} bind:value={value}>
+    <input type="range" {min} {max} {step} bind:value>
 </div>
 
 <!--suppress CssUnresolvedCustomProperty -->
