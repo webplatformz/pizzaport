@@ -1,7 +1,34 @@
+<script context="module" lang="ts">
+    import type {LoadInput, LoadOutput} from '@sveltejs/kit';
+
+    export async function load({fetch}: LoadInput): Promise<LoadOutput<{ pizzas: string[] }>> {
+        const url = `/pizzas.json`;
+        const res = await fetch(url);
+        const {pizzas} = await res.json();
+
+        if (res.ok) {
+            return {
+                props: {
+                    pizzas: pizzas.map(({name}) => name)
+                }
+            };
+        }
+
+        return {
+            status: 500,
+            error: new Error('Internal server error')
+        };
+    }
+</script>
+
 <script lang="ts">
     import SizeSlider from '$lib/SizeSlider.svelte';
+    import PizzaSelection from '$lib/PizzaSelection.svelte';
+
+    export let pizzas: string[] = [];
 
     let pizzaSize;
+    let selectedPizzas = ['Vegetariana'];
 </script>
 
 <svelte:head>
@@ -11,6 +38,7 @@
 <h1>Configure your Pizza subscription</h1>
 
 <h2>Pizzas</h2>
+<PizzaSelection bind:selectedPizzas {pizzas}/>
 
 <h2>Amount</h2>
 
