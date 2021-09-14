@@ -1,7 +1,8 @@
 <script context="module" lang="ts">
     import type {LoadInput, LoadOutput} from '@sveltejs/kit';
+    import type {PizzaListItem} from './index.json';
 
-    export async function load({fetch}: LoadInput): Promise<LoadOutput<{ items: { name: string, url: string }[] }>> {
+    export async function load({fetch}: LoadInput): Promise<LoadOutput<{ items: PizzaListItem[] }>> {
         const url = `/pizzas.json`;
         const res = await fetch(url);
         const {pizzas} = await res.json();
