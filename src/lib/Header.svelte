@@ -12,7 +12,7 @@
     <ul>
         {#each links as {path, name}}
             <li>
-                <NavLink {path}>{name}</NavLink>
+                <NavLink prefetch {path}>{name}</NavLink>
             </li>
         {/each}
     </ul>
