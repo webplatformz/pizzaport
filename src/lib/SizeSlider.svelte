@@ -1,5 +1,5 @@
 <script lang="ts">
-    import {styles} from "./styles";
+    import {styles} from './styles';
 
     export let min = 0;
     export let max = 10;

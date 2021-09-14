@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-    import type {LoadInput, LoadOutput} from "@sveltejs/kit";
+    import type {LoadInput, LoadOutput} from '@sveltejs/kit';
 
     export async function load({context}: LoadInput): Promise<LoadOutput<{ items: { name: string, url: string }[] }>> {
         if (context.pizzas) {
@@ -20,7 +20,7 @@
 
 <script lang="ts">
     import NavLink from '$lib/NavLink.svelte';
-    import type {Link} from "../../global";
+    import type {Link} from '../../global';
 
     export let items: Link[] = [];
 </script>
