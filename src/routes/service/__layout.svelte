@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SubMenu from "$lib/SubMenu.svelte";
-    import type {Link} from "../../global";
+    import SubMenu from '$lib/SubMenu.svelte';
+    import type {Link} from '../../global';
 
     export let items: Link[] = [
         {name: 'Subscription', url: 'subscription'},

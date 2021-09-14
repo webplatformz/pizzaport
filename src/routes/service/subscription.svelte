@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SizeSlider from "../../lib/SizeSlider.svelte";
+    import SizeSlider from '$lib/SizeSlider.svelte';
 
     let pizzaSize;
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import NavLink from "./NavLink.svelte";
+    import NavLink from './NavLink.svelte';
 
     const links = [
         {path: '/', name: 'Dashboard'},

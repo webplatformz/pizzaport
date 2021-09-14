@@ -1,5 +1,5 @@
-import {render} from "@testing-library/svelte";
-import SizeSlider from "./SizeSlider.svelte";
+import {render} from '@testing-library/svelte';
+import SizeSlider from './SizeSlider.svelte';
 
 it('should have the correct amount of stops', () => {
     const min = 0;

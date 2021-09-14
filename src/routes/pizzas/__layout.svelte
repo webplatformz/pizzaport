@@ -25,7 +25,7 @@
 </script>
 
 <script lang="ts">
-    import SubMenu from "$lib/SubMenu.svelte";
+    import SubMenu from '$lib/SubMenu.svelte';
 
     export let items = [];
 </script>

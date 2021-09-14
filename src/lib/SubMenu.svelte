@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type {Link} from "../global";
-    import NavLink from "./NavLink.svelte";
+    import type {Link} from '../global';
+    import NavLink from './NavLink.svelte';
 
     export let links: Link[] = [];
 </script>
