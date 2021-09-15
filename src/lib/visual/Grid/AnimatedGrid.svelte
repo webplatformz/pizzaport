@@ -21,6 +21,7 @@
 		display: grid;
 		grid-gap: 1rem;
 		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: 1fr;
 	}
 
 	@media (max-width: 1024px) {
