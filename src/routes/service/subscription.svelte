@@ -9,7 +9,7 @@
 		if (res.ok) {
 			return {
 				props: {
-					pizzas: pizzas.map(({ name }: { name: string}) => name),
+					pizzas: pizzas.map(({ name }: { name: string }) => name),
 				},
 			};
 		}

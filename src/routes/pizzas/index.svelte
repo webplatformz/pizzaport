@@ -28,7 +28,7 @@
 	export let items: PizzaListItem[] = [];
 	let init = false;
 
-	function spin(_: HTMLElement, { duration, delay}: { duration: number, delay: number}) {
+	function spin(_: HTMLElement, { duration, delay }: { duration: number; delay: number }) {
 		return {
 			duration,
 			delay,
