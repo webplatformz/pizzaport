@@ -9,7 +9,7 @@
 		if (res.ok) {
 			return {
 				props: {
-					pizzas: pizzas.map(({ name }) => name),
+					pizzas: pizzas.map(({ name }: { name: string}) => name),
 				},
 			};
 		}
@@ -27,7 +27,7 @@
 
 	export let pizzas: string[] = [];
 
-	let pizzaSize;
+	let pizzaSize: number;
 	let selectedPizzas = ['Vegetariana'];
 </script>
 

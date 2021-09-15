@@ -5,7 +5,7 @@
 	export function load({ error, status }: ErrorLoadInput): LoadOutput<{ title: string }> {
 		return {
 			props: {
-				title: `${status}: ${error.message}`,
+				title: `${status}: ${error?.message}`,
 			},
 		};
 	}

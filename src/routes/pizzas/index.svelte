@@ -28,11 +28,11 @@
 	export let items: PizzaListItem[] = [];
 	let init = false;
 
-	function spin(node, { duration, delay }) {
+	function spin(_: HTMLElement, { duration, delay}: { duration: number, delay: number}) {
 		return {
 			duration,
 			delay,
-			css: (t) => {
+			css: (t: number) => {
 				const eased = elasticOut(t);
 				return `
 					transform: scale(${eased}) rotate(${eased * 360}deg);
@@ -53,18 +53,19 @@
 <h1>Pizza List</h1>
 <div class="container">
 	{#if init}
-	{#each items as { url, name, imgSrc }, index (url )}
-		<div class="item" in:spin={{ duration: 3000, delay: 300 * index }}>
-			<NavLink path={url} >
+		{#each items as { url, name, imgSrc }, index (url)}
+			<div class="item" in:spin={{ duration: 3000, delay: 300 * index }}>
+				<NavLink path={url}>
 					<img
 						src={imgSrc}
 						width="100%"
 						alt="Image of a {name} pizza"
 						title="Image of a {name} pizza"
-					/></NavLink>
-		</div>
-	{/each}
-{/if}
+					/></NavLink
+				>
+			</div>
+		{/each}
+	{/if}
 </div>
 
 <style>

@@ -21,8 +21,8 @@
 
 <div class="boardcard">
 	<div class="score-wrapper">
-		<img src={myscore.iconUrl} alt="How italian are you" />
-		<p>{myscore.title}</p>
+		<img src={myscore?.iconUrl} alt="How italian are you" />
+		<p>{myscore?.title}</p>
 		<div class="flex-wrapper">
 			<div class="single-chart">
 				<svg viewBox="0 0 36 36" class="circular-chart">

@@ -16,4 +16,6 @@
 
 <PlanFrequency />
 
+<ItaloScore scorePercent="{scorePercent}"/>
+
 <SizeSlider min={28} max={40} bind:value={pizzaSize} />
