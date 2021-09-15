@@ -19,13 +19,19 @@
 </figure>
 
 <style>
+	:root {
+		--caption-line-height: 2.5rem;
+	}
+
 	figure {
 		margin: 0;
 		cursor: pointer;
+		height: 100%;
 	}
 
 	img {
 		width: 100%;
+		height: calc(100% - var(--caption-line-height) - var(--border-width));
 		display: block;
 		border: var(--border-width) solid var(--color-gray);
 		background-color: var(--color-white);
@@ -35,7 +41,7 @@
 	figcaption {
 		background-color: var(--color-gray);
 		text-align: center;
-		line-height: 2.5rem;
+		line-height: var(--caption-line-height);
 		margin-top: var(--border-width);
 	}
 
