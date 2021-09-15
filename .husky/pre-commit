@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm run check && npm run lint-and-fix
+npm run check && npm run lint-and-fix && npm run prettier
