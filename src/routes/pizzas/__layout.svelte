@@ -1,13 +1,14 @@
 <script context="module" lang="ts">
 	import type { LoadInput, LoadOutput } from '@sveltejs/kit';
+	import type { Pizza } from './index.json';
 	import type { PizzaListItem } from './index.json';
 
 	export async function load({
 		fetch,
-	}: LoadInput): Promise<LoadOutput<{ items: PizzaListItem[] }>> {
+	}: LoadInput): Promise<LoadOutput<{ items: { name: string; url: string }[] }>> {
 		const url = `/pizzas.json`;
 		const res = await fetch(url);
-		const { pizzas } = await res.json();
+		const { pizzas }: { pizzas: Pizza[] } = await res.json();
 
 		if (res.ok) {
 			return {
@@ -29,8 +30,9 @@
 
 <script lang="ts">
 	import SubMenu from '$lib/SubMenu.svelte';
+	import type { Link } from '../../global';
 
-	export let items = [];
+	export let items: Link[] = [];
 </script>
 
 <div class="container">

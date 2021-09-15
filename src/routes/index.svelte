@@ -1,6 +1,8 @@
 <script lang="ts">
 	import SizeSlider from '../lib/SizeSlider.svelte';
 	import ItaloScore from '../lib/ItaloScore.svelte';
+	import PlanFrequency from '$lib/plan-frequency/PlanFrequency.svelte';
+
 	export let name = 'Pizza';
 
 	const minPizzaSize = 28;
@@ -10,8 +12,8 @@
 	$: scorePercent = Math.floor(((pizzaSize - minPizzaSize) / (maxPizzaSize - minPizzaSize)) * 100);
 </script>
 
-<h1>Hello {name}</h1>
+<p>Hello {name}</p>
 
-<SizeSlider min={minPizzaSize} max={maxPizzaSize} bind:value={pizzaSize} />
+<PlanFrequency />
 
-<ItaloScore {scorePercent} />
+<SizeSlider min={28} max={40} bind:value={pizzaSize} />

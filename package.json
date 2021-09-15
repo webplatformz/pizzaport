@@ -12,11 +12,14 @@
 		"lint-and-fix": "eslint --ignore-path .gitignore .  --fix",
 		"prettier": "prettier --write .",
 		"prettier:check": "prettier --check .",
-		"test": "jest tests",
-		"test:watch": "jest tests --watch"
+		"test": "jest src",
+		"test:watch": "jest src --watch"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"date-fns": "^2.23.0"
+	},
 	"devDependencies": {
+		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
 		"@testing-library/jest-dom": "^5.14.1",
 		"@testing-library/svelte": "^3.0.3",
@@ -29,6 +32,7 @@
 		"eslint-plugin-svelte3": "^3.2.0",
 		"husky": "^7.0.2",
 		"jest": "^27.1.1",
+		"mockdate": "^3.0.5",
 		"prettier": "^2.4.0",
 		"prettier-plugin-svelte": "^2.4.0",
 		"svelte": "^3.34.0",
@@ -37,8 +41,7 @@
 		"svelte-preprocess": "^4.0.0",
 		"ts-jest": "^27.0.5",
 		"tslib": "^2.0.0",
-		"typescript": "^4.0.0",
-		"@sveltejs/adapter-vercel": "next"
+		"typescript": "^4.0.0"
 	},
 	"type": "module",
 	"jest": {
