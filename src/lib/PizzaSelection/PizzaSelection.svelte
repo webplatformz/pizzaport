@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SelectablePizza from './SelectablePizza.svelte';
-	import type { PizzaListItem } from '../routes/pizzas/index.json';
+	import type { PizzaListItem } from '../../routes/pizzas/index.json';
 
 	export let pizzas: string[] = [];
 	export let selectedPizzas: string[] = [];

@@ -23,7 +23,7 @@
 
 <script lang="ts">
 	import SizeSlider from '$lib/SizeSlider.svelte';
-	import PizzaSelection from '$lib/PizzaSelection.svelte';
+	import PizzaSelection from '$lib/PizzaSelection/PizzaSelection.svelte';
 
 	export let pizzas: string[] = [];
 
