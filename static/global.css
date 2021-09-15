@@ -1,44 +1,47 @@
 :root {
-    --color-primary: #be2500;
-    --color-green: #1b9300;
-    --color-yellow: #fcca05;
-    --color-gray: #d9d9d9;
-    --color-black: #000000;
-    --color-white: #ffffff;
-    --color-page-background: #f0f0f0;
-    --border-width: 5px;
-    --font-family-heading: 'Baloo 2', sans-serif;
-    --font-weight-heading: 600;
-    --font-family-text: Roboto, sans-serif;
-    --box-shadow-hidden: 0 0 black;
-    --box-shadow-hover: 8px 8px black;
-    --box-shadow-transition: box-shadow 50ms ease-in;
+	--color-primary: #be2500;
+	--color-green: #1b9300;
+	--color-yellow: #fcca05;
+	--color-gray: #d9d9d9;
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-page-background: #f0f0f0;
+	--border-width: 5px;
+	--font-family-heading: 'Baloo 2', sans-serif;
+	--font-weight-heading: 600;
+	--font-family-text: Roboto, sans-serif;
+	--box-shadow-hidden: 0 0 black;
+	--box-shadow-hover: 8px 8px black;
+	--box-shadow-transition: box-shadow 50ms ease-in;
 }
 
-*, *:before, *:after {
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family-text);
-    font-size: 16px;
-    background-color: var(--color-page-background);
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-family-text);
+	font-size: 16px;
+	background-color: var(--color-page-background);
 }
 
 #svelte {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 
 .container {
-    display: flex;
-    flex-grow: 1;
+	display: flex;
+	flex-grow: 1;
 }
 
 main {
-    flex-grow: 1;
-    padding: 1rem 2.5rem;
+	flex-grow: 1;
+	padding: 1rem 2.5rem;
 }
