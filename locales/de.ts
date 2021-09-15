@@ -1,0 +1,16 @@
+export default {
+	dashboard: 'Armaturenbrett',
+	pizzas: 'Pizzas',
+	subscription: 'Abonnement',
+	statistics: 'Statistiken',
+	'service': 'Dienstleistung',
+	'service.configure_pizza': 'Konfiguriere dein Pizza-Abonnement',
+	'service.size': 'Grösse',
+	'service.amount': 'Menge',
+	'service.frequency': 'Häufigkeit',
+	'service.delivery_time': 'Lieferzeit',
+	'frequency.start': 'Anfang',
+	'frequency.end': 'Ende',
+	'frequency.daily': 'Täglich',
+	'frequency.weekly': 'Wöchentlich',
+};

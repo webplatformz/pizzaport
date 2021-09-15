@@ -25,6 +25,7 @@
 	import SizeSlider from '$lib/SizeSlider.svelte';
 	import PizzaSelection from '$lib/PizzaSelection/PizzaSelection.svelte';
 	import type { PizzaListItem } from '../pizzas/index.json';
+	import {_} from '$lib/i18n.store';
 
 	export let pizzas: PizzaListItem[] = [];
 
@@ -36,16 +37,16 @@
 	<title>Pizza Subscription</title>
 </svelte:head>
 
-<h1>Configure your Pizza subscription</h1>
+<h1>{$_('service.configure_pizza')}</h1>
 
-<h2>Pizzas</h2>
+<h2>{$_('pizzas')}</h2>
 <PizzaSelection bind:selectedPizzaNames {pizzas} />
 
-<h2>Amount</h2>
+<h2>{$_('service.amount')}</h2>
 
-<h2>Size</h2>
+<h2>{$_('service.size')}</h2>
 <SizeSlider min={28} max={40} bind:value={pizzaSize} />
 
-<h2>Frequency</h2>
+<h2>{$_('service.frequency')}</h2>
 
-<h2>Delivery Time</h2>
+<h2>{$_('service.delivery_time')}</h2>
