@@ -9,7 +9,7 @@
 		if (res.ok) {
 			return {
 				props: {
-					pizzas
+					pizzas,
 				},
 			};
 		}
@@ -24,7 +24,7 @@
 <script lang="ts">
 	import SizeSlider from '$lib/SizeSlider.svelte';
 	import PizzaSelection from '$lib/PizzaSelection/PizzaSelection.svelte';
-	import type {PizzaListItem} from '../pizzas/index.json';
+	import type { PizzaListItem } from '../pizzas/index.json';
 
 	export let pizzas: PizzaListItem[] = [];
 
