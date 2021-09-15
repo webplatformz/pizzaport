@@ -5,12 +5,13 @@
 
 	export const prerender = false;
 	export async function load(): Promise<LoadOutput<{ randomNumber: number }>> {
+		const randomNumber = Math.random();
 		console.log(`ISR - Start rendering on ${browser ? 'user-agent' : 'server'}`);
 		await sleep(2000); // random latency
-		console.log(`ISR - Rendered on ${browser ? 'user-agent' : 'server'}`);
+		console.log(`ISR - Rendered on ${browser ? 'user-agent' : 'server'} with ${randomNumber}`);
 		return {
 			props: {
-				randomNumber: Math.random(),
+				randomNumber: randomNumber,
 			},
 			maxage: 60,
 		};
