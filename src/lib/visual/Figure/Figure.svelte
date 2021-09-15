@@ -1,5 +1,5 @@
 <script lang="ts">
-	import {createEventDispatcher} from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 
 	export let name = '';
 	export let imgSrc = '';
@@ -14,7 +14,7 @@
 </script>
 
 <figure on:click={onClick} class:selected>
-	<img src={imgSrc} alt="Pizza {name}" />
+	<img src={imgSrc} alt={name} />
 	<figcaption>{name}</figcaption>
 </figure>
 
