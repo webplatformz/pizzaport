@@ -9,7 +9,7 @@
 		if (res.ok) {
 			return {
 				props: {
-					pizzas: pizzas.map(({ name }: { name: string }) => name),
+					pizzas,
 				},
 			};
 		}
@@ -23,12 +23,13 @@
 
 <script lang="ts">
 	import SizeSlider from '$lib/SizeSlider.svelte';
-	import PizzaSelection from '$lib/PizzaSelection.svelte';
+	import PizzaSelection from '$lib/PizzaSelection/PizzaSelection.svelte';
+	import type { PizzaListItem } from '../pizzas/index.json';
 
-	export let pizzas: string[] = [];
+	export let pizzas: PizzaListItem[] = [];
 
 	let pizzaSize: number;
-	let selectedPizzas = ['Vegetariana'];
+	let selectedPizzaNames = ['Vegetariana'];
 </script>
 
 <svelte:head>
@@ -38,7 +39,7 @@
 <h1>Configure your Pizza subscription</h1>
 
 <h2>Pizzas</h2>
-<PizzaSelection bind:selectedPizzas {pizzas} />
+<PizzaSelection bind:selectedPizzaNames {pizzas} />
 
 <h2>Amount</h2>
 

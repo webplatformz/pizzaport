@@ -2,6 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 
 	export let name = '';
+	export let imgSrc = '';
 	export let selected = false;
 
 	const dispatch = createEventDispatcher();
@@ -13,7 +14,7 @@
 </script>
 
 <figure on:click={onClick} class:selected>
-	<img src="/pizzas/pizza-{name.toLowerCase()}.png" alt="Pizza {name}" />
+	<img src={imgSrc} alt={name} />
 	<figcaption>{name}</figcaption>
 </figure>
 
