@@ -28,11 +28,11 @@
 	export let items: PizzaListItem[] = [];
 	let init = false;
 
-	function spin(node, { duration, delay }) {
+	function spin(_: HTMLElement, { duration, delay }: { duration: number; delay: number }) {
 		return {
 			duration,
 			delay,
-			css: (t) => {
+			css: (t: number) => {
 				const eased = elasticOut(t);
 				return `
 					transform: scale(${eased}) rotate(${eased * 360}deg);
@@ -61,8 +61,8 @@
 						width="100%"
 						alt="Image of a {name} pizza"
 						title="Image of a {name} pizza"
-					/>
-				</NavLink>
+					/></NavLink
+				>
 			</div>
 		{/each}
 	{/if}

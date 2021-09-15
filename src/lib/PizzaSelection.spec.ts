@@ -3,7 +3,7 @@ import PizzaSelection from './PizzaSelection.svelte';
 
 it('should add pizza to selection', async () => {
 	const pizzas = ['a', 'b', 'c'];
-	const selectedPizzas = [];
+	const selectedPizzas: string[] = [];
 	const { getByText, component } = render(PizzaSelection, { pizzas, selectedPizzas });
 
 	await fireEvent.click(getByText('a'));

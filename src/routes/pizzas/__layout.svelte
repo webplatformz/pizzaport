@@ -29,8 +29,9 @@
 
 <script lang="ts">
 	import SubMenu from '$lib/SubMenu.svelte';
+	import type { Link } from '../../global';
 
-	export let items = [];
+	export let items: Link[] = [];
 </script>
 
 <div class="container">

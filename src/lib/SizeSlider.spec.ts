@@ -18,7 +18,7 @@ it('should show stop labels with step as difference', () => {
 
 	const { getAllByTestId } = render(SizeSlider, { min, max, step });
 
-	const stops: string[] = getAllByTestId('stop').map((i) => i.textContent);
+	const stops: (string | null)[] = getAllByTestId('stop').map((i) => i.textContent);
 
 	expect(stops).toEqual(['0', '5', '10']);
 });
