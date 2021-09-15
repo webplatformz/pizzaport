@@ -21,11 +21,11 @@
 </script>
 
 <script lang="ts">
-    import NavLink from '$lib/NavLink.svelte';
-    import AnimatedGrid from '$lib/visual/Grid/AnimatedGrid.svelte';
-    import AnimatedGridItem from '$lib/visual/Grid/AnimatedGridItem.svelte';
+	import NavLink from '$lib/NavLink.svelte';
+	import AnimatedGrid from '$lib/visual/Grid/AnimatedGrid.svelte';
+	import AnimatedGridItem from '$lib/visual/Grid/AnimatedGridItem.svelte';
 
-    export let items: PizzaListItem[] = [];
+	export let items: PizzaListItem[] = [];
 </script>
 
 <svelte:head>
@@ -34,11 +34,16 @@
 
 <h1>Pizza List</h1>
 <AnimatedGrid>
-    {#each items as {url, name, imgSrc}, index (url)}
-        <AnimatedGridItem mode="spin" {index}>
-            <NavLink path={url}>
-                <img src={imgSrc} width="100%" alt="Image of a {name} pizza" title="Image of a {name} pizza">
-            </NavLink>
-        </AnimatedGridItem>
-    {/each}
+	{#each items as { url, name, imgSrc }, index (url)}
+		<AnimatedGridItem mode="spin" {index}>
+			<NavLink path={url}>
+				<img
+					src={imgSrc}
+					width="100%"
+					alt="Image of a {name} pizza"
+					title="Image of a {name} pizza"
+				/>
+			</NavLink>
+		</AnimatedGridItem>
+	{/each}
 </AnimatedGrid>
