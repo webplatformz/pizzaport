@@ -1,18 +1,27 @@
 <script lang="ts">
     import {TOPPINGSMATRIX} from '$lib/toppings/toppingUsage';
+    import {onMount} from "svelte";
 
     export let toppingItems = TOPPINGSMATRIX;
+
+    let initState = true;
+
+    onMount(async () => {
+        setTimeout(() => {
+            initState = false;
+        }, 100);
+    });
 
 </script>
 
 <div class="toppings-card">
-    <h3>Toppings {toppingItems.length}</h3>
+    <h3>Toppings</h3>
     <div class="toppings">
         {#each toppingItems as topping}
             <div class="toppings-wrapper">
                 <div class="bar-wrapper">
                     <div class="bar-value"
-                         style="background-color: {topping.color}; height: {topping.usageInPercent}%"></div>
+                         style="background-color: {topping.color}; height: {initState ? 0 : topping.usageInPercent}%"></div>
                 </div>
                 <img class="topping-image" src={topping.iconUrl} alt="Ingredient {topping.name}">
             </div>
@@ -34,7 +43,7 @@
     }
 
     .bar-wrapper {
-        height: 90%;
+        height: 80%;
         width: 40px;
         border: var(--border-width) solid black;
         position: relative;
@@ -49,7 +58,8 @@
     }
 
     img {
-        height: 10%;
+        padding: var(--border-width);
+        height: 20%;
     }
 
 </style>
