@@ -10,6 +10,9 @@
     --font-family-heading: 'Baloo 2', sans-serif;
     --font-weight-heading: 600;
     --font-family-text: Roboto, sans-serif;
+    --box-shadow-hidden: 0 0 black;
+    --box-shadow-hover: 8px 8px black;
+    --box-shadow-transition: box-shadow 50ms ease-in;
 }
 
 *, *:before, *:after {

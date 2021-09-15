@@ -1,15 +1,15 @@
 <script lang="ts">
-    import {createEventDispatcher} from 'svelte';
+	import {createEventDispatcher} from 'svelte';
 
-    export let name = '';
-    export let selected = false;
+	export let name = '';
+	export let selected = false;
 
-    const dispatch = createEventDispatcher();
+	const dispatch = createEventDispatcher();
 
-    function onClick() {
-        selected = !selected;
-        dispatch('click', selected);
-    }
+	function onClick() {
+		selected = !selected;
+		dispatch('click', selected);
+	}
 </script>
 
 <figure on:click={onClick} class:selected>
@@ -38,6 +38,11 @@
         margin-top: var(--border-width);
     }
 
+    img, figcaption {
+        box-shadow: var(--box-shadow-hidden);
+        transition: var(--box-shadow-transition);
+    }
+
     .selected img {
         border-color: var(--color-primary);
     }
@@ -45,5 +50,10 @@
     .selected figcaption {
         background-color: var(--color-primary);
         color: var(--color-white);
+    }
+
+    figure:hover img,
+    figure:hover figcaption {
+        box-shadow: var(--box-shadow-hover);
     }
 </style>
