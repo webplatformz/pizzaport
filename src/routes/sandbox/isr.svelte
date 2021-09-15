@@ -18,6 +18,8 @@
 </script>
 
 <script lang="ts">
+	import NavLink from '$lib/NavLink.svelte';
+
 	export let randomNumber: number;
 </script>
 
@@ -26,3 +28,6 @@
 </svelte:head>
 
 <h1>ISR page with random number: {randomNumber}</h1>
+<NavLink path="/sandbox/ssr">SSR</NavLink>
+<NavLink path="/sandbox/isr">ISR</NavLink>
+<NavLink path="/sandbox/static">Static</NavLink>
