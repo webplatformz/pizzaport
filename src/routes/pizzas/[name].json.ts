@@ -1,6 +1,7 @@
 import type { ServerRequest } from '@sveltejs/kit/types/hooks';
 import type { EndpointOutput } from '@sveltejs/kit/types/endpoint';
 import { PIZZAS } from '$lib/pizzas';
+import sleep from '$lib/utils/sleep';
 
 export async function get({
 	params,
@@ -29,10 +30,3 @@ export async function get({
 	};
 }
 
-async function sleep(duration: number) {
-	await new Promise((resolve) => {
-		setTimeout(() => {
-			resolve(true);
-		}, duration);
-	});
-}

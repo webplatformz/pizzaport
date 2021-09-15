@@ -1,9 +1,12 @@
 <script context="module" lang="ts">
 	import type { LoadOutput } from '@sveltejs/kit';
 	import { browser } from '$app/env';
+	import sleep from '$lib/utils/sleep';
 
 	export const prerender = false;
-	export function load(): LoadOutput<{ randomNumber: number }> {
+	export async function load(): Promise<LoadOutput<{ randomNumber: number }>> {
+		console.log(`ISR - Start rendering on ${browser ? 'user-agent' : 'server'}`);
+		await sleep(2000); // random latency
 		console.log(`ISR - Rendered on ${browser ? 'user-agent' : 'server'}`);
 		return {
 			props: {
