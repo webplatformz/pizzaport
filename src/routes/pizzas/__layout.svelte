@@ -34,10 +34,8 @@
 	export let items: Link[] = [];
 </script>
 
-<div class="container">
-	<SubMenu links={items} />
+<SubMenu links={items} />
 
-	<main>
-		<slot />
-	</main>
-</div>
+<main>
+	<slot />
+</main>
