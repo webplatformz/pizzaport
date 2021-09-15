@@ -58,7 +58,6 @@
 
 	.score-wrapper {
 		text-align: center;
-		width: 100px;
 	}
 
 	.flex-wrapper {
@@ -73,7 +72,7 @@
 
 	.circular-chart {
 		display: block;
-		margin: 10px auto;
+		margin: var(--border-width) auto;
 		max-width: 80%;
 		max-height: 250px;
 	}
