@@ -24,7 +24,7 @@
     .toppings {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 5px 5px;
+        gap: var(--border-width);
     }
 
     .toppings-wrapper {
@@ -36,8 +36,7 @@
     .bar-wrapper {
         height: 90%;
         width: 40px;
-        background-color: lightgray;
-        border: 5px solid black;
+        border: var(--border-width) solid black;
         position: relative;
     }
 
