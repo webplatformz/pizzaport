@@ -1,5 +1,6 @@
 <script lang="ts">
 	import NavLink from './NavLink.svelte';
+	import { loading } from './loading.store';
 
 	const links = [
 		{ path: '/', name: 'Dashboard' },
@@ -8,7 +9,7 @@
 	];
 </script>
 
-<nav>
+<nav class:loading={$loading}>
 	<img src="/pizzaport-logo.svg" alt="pizzaport" />
 	<ul>
 		{#each links as { path, name }}
@@ -17,14 +18,38 @@
 			</li>
 		{/each}
 	</ul>
+	<hr />
 </nav>
 
 <style>
 	nav {
+		position: relative;
 		height: 85px;
 		display: flex;
-		border-bottom: var(--border-width) solid var(--color-primary);
+		overflow: hidden;
 		background-color: var(--color-white);
+		--loading-bar-width: 20%;
+	}
+
+	hr {
+		position: absolute;
+		height: var(--border-width);
+		width: 100%;
+		background-color: var(--color-primary);
+		border: none;
+		margin: 0;
+		bottom: 0;
+	}
+
+	.loading hr:after {
+		content: '';
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: var(--loading-bar-width);
+		background-color: var(--color-yellow);
+		bottom: 0;
+		animation: loading 500ms infinite ease-in-out;
 	}
 
 	img {
@@ -38,5 +63,14 @@
 		padding: 0;
 		flex-grow: 1;
 		list-style: none;
+	}
+
+	@keyframes loading {
+		from {
+			left: calc(var(--loading-bar-width) * -1);
+		}
+		to {
+			left: 100%;
+		}
 	}
 </style>

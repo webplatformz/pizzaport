@@ -18,6 +18,8 @@
 <style>
 	aside {
 		width: 220px;
+		flex-shrink: 0;
+		flex-grow: 0;
 		background-color: var(--color-white);
 	}
 
