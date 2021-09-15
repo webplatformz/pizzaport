@@ -10,21 +10,15 @@
 </script>
 
 {#if mode === 'spin'}
-	<div class="item" in:spin={{ duration, delay: delay * index }}>
+	<div in:spin={{ duration, delay: delay * index }}>
 		<slot />
 	</div>
 {:else if mode === 'fly'}
-	<div class="item" in:fly={{ duration, delay: delay * index, y }}>
+	<div in:fly={{ duration, delay: delay * index, y }}>
 		<slot />
 	</div>
 {:else}
-	<div class="item">
+	<div>
 		<slot />
 	</div>
 {/if}
-
-<style>
-	.item {
-		padding: 1rem;
-	}
-</style>
