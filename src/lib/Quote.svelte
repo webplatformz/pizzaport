@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let quote;
-	export let author;
+	export let quote: string;
+	export let author: string;
 </script>
 
 <h3>Quote of the moment</h3>
