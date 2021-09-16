@@ -33,7 +33,7 @@
     .dashboard-content{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(6, 1fr);
+        grid-template-rows: 1fr 1fr minmax(1fr, auto) 1fr 1fr 1fr;
         gap: var(--double-border-width);
         padding: var(--double-border-width);
         width: 60%;

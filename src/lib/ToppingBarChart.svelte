@@ -31,14 +31,14 @@
 
 <style>
     .toppings {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: var(--border-width);
+        display: flex;
+        align-items: flex-start;
     }
 
     .toppings-wrapper {
-        min-height: 200px;
-        justify-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
         text-align: center;
     }
 
